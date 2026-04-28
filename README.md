@@ -1,71 +1,74 @@
-KeywordTracker (BetterDiscord Plugin)
+KeywordTracker
+A BetterDiscord plugin for real‑time keyword alerts.
 
-KeywordTracker notifies you when a message matches one of your keywords and can automatically navigate you to the channel/message.
+KeywordTracker notifies you whenever a message matches one of your keywords and can automatically jump you to the channel or message where it occurred.
 
-Install (Where to put it)
+✨ Features
+Real‑time keyword detection
 
-This is a BetterDiscord plugin file. You do not run it directly.
+Optional auto‑navigation to the matched message
 
-Make sure the file is named:
+Case‑insensitive matching
 
+Full regex support
+
+Per‑keyword filters (user, channel, server)
+
+Simple, clean configuration UI
+
+📦 Installation
+This is a BetterDiscord plugin. You do not run it directly.
+
+1. Download
+Ensure the file is named:
+
+Code
 KeywordTracker.plugin.js
-
-Put it in your BetterDiscord plugins folder:
-
+2. Move it to your BetterDiscord plugins folder
 Windows
-
+Code
 %APPDATA%\BetterDiscord\plugins
-
-Quick way:
+Quick path:
 Discord → User Settings → BetterDiscord → Plugins → Open Plugins Folder
 
 macOS
-
+Code
 ~/Library/Application Support/BetterDiscord/plugins
-
 Linux
-
+Code
 ~/.config/BetterDiscord/plugins
+3. Enable the plugin
+Discord → Settings → BetterDiscord → Plugins → KeywordTracker
 
-After copying the file:
+If prompted, install ZeresPluginLibrary.
 
-Discord → Settings → BetterDiscord → Plugins
+Note (Windows): Double‑clicking the .plugin.js may offer to copy itself into the correct folder. This is normal.
 
-Enable KeywordTracker
+📚 Dependency
+KeywordTracker requires ZeresPluginLibrary.
 
-If prompted, also install/enable ZeresPluginLibrary
+If you see a “Library Missing” popup when enabling the plugin, click Download Now and BetterDiscord will install it automatically.
 
-Tip: If you double-click the .plugin.js on Windows, the script portion at the top may offer to copy itself to the right folder. That’s normal.
-
-Required Dependency
-
-This plugin uses ZeresPluginLibrary.
-
-If you enable the plugin and see a “Library Missing” popup, click Download Now and it will install the library plugin for you.
-
-How to Configure
+⚙️ Configuration
+Open the settings panel:
 
 Discord → Settings → BetterDiscord → Plugins → KeywordTracker (gear icon)
 
-Keywords
+🔑 Keywords
+Enter one keyword per line.
 
-One keyword per line.
+Matching is case‑insensitive by default
 
-Normal keywords are case-insensitive.
-
-Regex is supported using /pattern/flags format.
+Regex supported using /pattern/flags format
 
 Examples:
 
+Code
 hello
-
 free nitro
-
 /\bdeal(s)?\b/i
-
-Filters (watch only specific user/channel/server)
-
-You can prefix a keyword with a filter in this format:
+🎯 Filters
+Limit a keyword to specific users, channels, or servers by prefixing it:
 
 @USER_ID:keyword → only match messages from that user
 
@@ -75,46 +78,9 @@ SERVER_ID:keyword → only match messages in that server
 
 Examples:
 
+Code
 @123456789012345678:hello
-
-#234567890123456789:/\bping\b/i
-
-345678901234567890:/\d{4}-\d{2}-\d{2}/
-
-To copy IDs: enable Developer Mode in Discord → Settings → Advanced → Developer Mode, then right-click a user/channel/server → Copy ID.
-
-Other Options (Settings panel)
-
-Auto-Navigate: Automatically jumps you to the channel when a match happens.
-
-Navigation Cooldown: Prevents constant jumping (default is 5 seconds).
-
-Notification sounds: Toggles sound on match.
-
-Embeds: Allow matching inside embed content.
-
-Bots / Self: Allow bots and/or your own messages to trigger matches.
-
-Ignored Users: One user ID per line (their messages will never trigger matches).
-
-Whitelisted Users: One user ID per line (all their messages trigger matches).
-
-Using the Inbox (Matches)
-
-The plugin adds a small icon near the top bar. Clicking it opens a “Keyword Matches” inbox:
-
-View recent matches
-
-Jump to a message
-
-Mark individual matches as read
-
-Or mark everything read
-
-Troubleshooting
-
-Plugin doesn’t show up: Confirm the file is in the correct plugins folder and ends with .plugin.js.
-
-Library Missing: Install/enable 0PluginLibrary.plugin.js (ZeresPluginLibrary).
-
-No matches: Make sure the server/channel is enabled in the plugin’s Channels section and your keyword list isn’t empty.
+#987654321098765432:/\bdeal\b/i
+112233445566778899:free nitro
+📝 License
+MIT (or whatever license you prefer — I can generate one if you want)
